@@ -1,0 +1,54 @@
+#include <stdio.h>
+
+float potencia(float base, int exponente) {
+    float resultado = 1;
+    int i;
+    for (i = 0; i < exponente; ++i) {
+        resultado *= base;
+    }
+    return resultado;
+}
+
+
+int main() {
+    float x, y, resultado;
+    char op;
+    int valido = 1;
+
+    printf("Bienvenido a la calculadora\n");
+    printf("Ingrese operacion:\n ");
+    printf("S para sumar.\n R para restar.\n M para multiplicar.\n D para dividir.\n P para potencia.\n ");
+    scanf("%c", &op);
+    printf("Ingrese x: ");
+    scanf("%f", &x);
+    printf("Ingrese y: ");
+    scanf("%f", &y);
+
+    switch (op) {
+        case 'S':
+            resultado = x + y;
+            break;
+        case 'R':
+            resultado = x - y;
+            break;
+        case 'M':
+        case 'x':
+            resultado = x * y;
+            break;
+        case 'D':
+            resultado = x / y;
+            break;
+        case 'P':
+            resultado = potencia(x, (int) y);
+            break;
+        default:
+            valido = 0;
+    }
+
+    if (valido)
+        printf("El resultado es %f\n", resultado);
+    else
+        printf("Operacion invalida\n");
+
+    return 0;
+}
