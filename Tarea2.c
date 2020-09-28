@@ -43,23 +43,56 @@ void promedio_punteros(int *a , int *b){
 
 int main(int argc, char const *argv[])
 {
-	int *var_puntero;
-	int *var2_puntero;
-	int *cantidad_puntero;
-	int *suma_puntero;
+	int *n1;
+	int *n2;
+	int *cantidad;
+	char op;
+	int valido = 1;
 	
 
-	var_puntero=malloc(sizeof(int)*100);
-	var2_puntero=malloc(sizeof(int)*100);
-	cantidad_puntero=malloc(sizeof(int)*100);
+	n1=malloc(sizeof(int)*100);
+	n2=malloc(sizeof(int)*100);
+	cantidad=malloc(sizeof(int)*100);
 
-    printf("Suma del conjunto de números que elijas\n");
-    printf("Cuántos quieres?");
-    scanf(" %d", &*cantidad_puntero);
-    suma_punteros(cantidad_puntero,var_puntero);
-    printf("%d",suma);
+	printf("Bienvenido a la calculadora\n");
+	printf("Ingrese operacion:\n ");
+	printf("S para sumar.\n R para restar.\n M para multiplicar.\n D para dividir.\n P para potencia.\n ");
+	scanf("%c", &op);
 
-    free(var_puntero);
+	switch (op) {
+
+    	case 'S':
+        	printf("Suma del conjunto de números que elijas\n");
+    		printf("Cuántos quieres?");
+    		scanf(" %d", &*cantidad);
+    		suma_punteros(cantidad,n1);
+    		printf("La sumatoria es : ");
+    		printf("%d",suma);
+        	free(n1);
+        	break;
+
+    	case 'R':
+        	
+        	break;
+    	case 'M':
+        	break;
+    	case 'D':
+        
+        	break;
+    	case 'P':
+        
+        	break;
+    	default:
+        	valido = 0;
+}
+
+	
+
+
+	
+
+    
+    free(n1);
 	return 0;
 
 	
