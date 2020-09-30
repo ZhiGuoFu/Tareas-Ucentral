@@ -1,44 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int suma;
-int resta;
-int multiplicacion;
-int division;
-int potencia;
-int promedio;
 
-
-void suma_punteros(int *cuantos,int *num){ 
+void suma_punteros(int *cuantos,int *num,int *resultado){ 
 	int i;
+	*resultado=0;
     for (i=0; i<*cuantos;i++)
-    {
+    	
+    {	
         printf("\nTeclea el número: ");
         scanf(" %d", &*num);
-        suma = suma + *num;
+        *resultado = *resultado + *num;
     }
 }
 
-void restador_puntero(int *a,int *b){
-	resta=*a-*b;
-	*a= resta;
-}
-
-void multiplicacion_punteros(int *a,int *b){
-	multiplicacion=(*a)*(*b);
-	*a= multiplicacion;
-}
-
-void division_punteros(int *a, int *b){
-	division=(*a) / (*b);
-	*b=division;
-}
-
-
-
-void promedio_punteros(int *a , int *b){
-	
-}
 
 
 int main(int argc, char const *argv[])
@@ -47,12 +22,15 @@ int main(int argc, char const *argv[])
 	int *n2;
 	int *cantidad;
 	char op;
+	int *numeros;
 	int valido = 1;
+	int *resultado;
 	
 
 	n1=malloc(sizeof(int)*100);
 	n2=malloc(sizeof(int)*100);
 	cantidad=malloc(sizeof(int)*100);
+	resultado=malloc(sizeof(int)*100);
 
 	printf("Bienvenido a la calculadora\n");
 	printf("Ingrese operacion:\n ");
@@ -65,13 +43,13 @@ int main(int argc, char const *argv[])
         	printf("Suma del conjunto de números que elijas\n");
     		printf("Cuántos quieres?");
     		scanf(" %d", &*cantidad);
-    		suma_punteros(cantidad,n1);
+    		suma_punteros(cantidad,n1,resultado);
     		printf("La sumatoria es : ");
-    		printf("%d",suma);
-        	free(n1);
+    		printf("%d",*resultado);
         	break;
 
     	case 'R':
+    		
         	
         	break;
     	case 'M':
