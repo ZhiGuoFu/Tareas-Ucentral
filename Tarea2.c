@@ -17,10 +17,9 @@ void suma_punteros(int *cuantos,int *num,int *resultado){
 void resta_punteros(int *cuantos,int *num,int *resultado){ 
 
 	int i;
-	*resultado=0;
-    for (i=0; i<*cuantos;i++)
-    {	
-        printf("\nTeclea el número: ");
+
+	for (i=0; i<*cuantos;i++){	
+       	printf("\nMenos: ");
         scanf(" %d", &*num);
         *resultado = *resultado - *num;
     }
@@ -62,10 +61,11 @@ int main(int argc, char const *argv[])
 
     	case 'R':
 
-    		printf("Suma del conjunto de números que elijas\n");
+    		printf("Escriba numero para restarle : \n");
+    		scanf(" %d", &*resultado);
     		printf("Cuántos quieres?");
     		scanf(" %d", &*cantidad);
-    		suma_punteros(cantidad,n1,resultado);
+    		resta_punteros(cantidad,n1,resultado);
     		printf("La resta es : ");
     		printf("%d",*resultado);
         	break;
