@@ -39,16 +39,17 @@ void divi_punteros(float *a, float *b,float*resultado){
 	*b=*resultado;
 }
 
-void Potencia_punteros(int *cuantos,int *num, int*resultado){
+void Potencia_punteros(int *base,int*exponente,int*resultado){
 	int i;
-	*resultado=0;
-	for (i=0; i<*cuantos;i++){
-		*resultado =  *resultado + *num * *num;
+	
+	*resultado=1;
+	for (i=0; i<*exponente;i++){
+		*resultado= *resultado**base;
 	}
 }
 
 void prom_punteros(float *cuantos,float *num,float *resultado){ 
-  float i;
+  	int i;
 	*resultado=0;
     for (i=0; i<*cuantos;i++)
     {	
@@ -92,7 +93,6 @@ int main(int argc, char const *argv[])
 	switch (op) {
 
     	case 'S':
-
         	printf("Suma del conjunto de números que elijas\n");
     		printf("Cuántos quieres?");
     		scanf(" %d", &*cantidad);
@@ -102,7 +102,6 @@ int main(int argc, char const *argv[])
         	break;
 
     	case 'R':
-
     		printf("Escriba numero para restarle : \n");
     		scanf(" %d", &*resultado);
     		printf("Cuántos quieres?");
@@ -112,8 +111,6 @@ int main(int argc, char const *argv[])
     		printf("%d",*resultado);
         	break;
     		
-        	
-        	break;
     	case 'M':
     		printf("Multiplicación del conjunto de números que elijas\n");
 			printf("Cuántos quieres? ");
@@ -122,8 +119,8 @@ int main(int argc, char const *argv[])
 			printf("La multiplicación es: ");
 			printf("%d",*resultado);
         	break;
-    	case 'D':
 
+    	case 'D':
     		printf("Ha escogido division de numeros\n");
   			printf("Ingrese los numeros a dividir: ");
 			scanf("%f", &*decimal1);
@@ -132,21 +129,19 @@ int main(int argc, char const *argv[])
   			divi_punteros(decimal1,decimal2,resultado2);
   			printf("La division de los numeros ingresados es: ");
   			printf("%.2f",*resultado2);
-        
         	break;
-    	case 'P':	
 
+    	case 'P':	
     		printf("Ha escojido la potencia de un numero\n");
     		printf("Ingrese numero : ");
     		scanf(" %d", &*n1);
     		printf("Elevado a : ");
-    		scanf(" %d", &*n2);
-    		Potencia_punteros(cantidad,n1,resultado);
+    		scanf(" %d", &*cantidad);
+    		Potencia_punteros(n1,cantidad,resultado);
     		printf("El resultado es : ");
     		printf("%d",*resultado);
         	break;
         
-        	break;
         case 'X':
 
         	printf("Promedio del conjunto de números que elijas\n");
@@ -155,8 +150,8 @@ int main(int argc, char const *argv[])
           	prom_punteros(decimal1,decimal2,resultado2);
           	printf("El promedio es: ");
           printf("%.2f", *resultado2 / *decimal1);
-        
         	break;
+
     	default:
         	valido = 0;
 }
