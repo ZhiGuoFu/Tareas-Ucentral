@@ -58,15 +58,15 @@ int main(int argc, char const *argv[])
 	n2=malloc(sizeof(int)*100);
 	cantidad=malloc(sizeof(int)*100);
 	resultado=malloc(sizeof(int)*100);
-	division1=malloc(sizeof(int)*100);
-	division2=malloc(sizeof(int)*100);
+	decimal1=malloc(sizeof(int)*100);
+	decimal2=malloc(sizeof(int)*100);
 	resultado2=malloc(sizeof(int)*100);
 
 
 
 	printf("Bienvenido a la calculadora\n");
 	printf("Ingrese operacion:\n ");
-	printf("S para sumar.\n R para restar.\n M para multiplicar.\n D para dividir.\n P para potencia.\n ");
+	printf("S para sumar.\n R para restar.\n M para multiplicar.\n D para dividir.\n P para potencia.\n PR para promedio\n ");
 	scanf("%c", &op);
 
 	switch (op) {
