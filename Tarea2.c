@@ -87,7 +87,7 @@ int main(int argc, char const *argv[])
 
 	printf("Bienvenido a la calculadora\n");
 	printf("Ingrese operacion:\n ");
-	printf("S para sumar.\n R para restar.\n M para multiplicar.\n D para dividir.\n P para potencia.\n X para promedio\n ");
+	printf("S para sumar.\n R para restar.\n M para multiplicar.\n D para dividir.\n P para potencia.\n X para promedio\n E para salir \n ");
 	scanf("%c", &op);
 
 	switch (op) {
@@ -152,6 +152,9 @@ int main(int argc, char const *argv[])
           printf("%.2f", *resultado2 / *decimal1);
         	break;
 
+       	case 'E':	
+       		printf("Adios\n");
+       		break;
     	default:
         	valido = 0;
 }
