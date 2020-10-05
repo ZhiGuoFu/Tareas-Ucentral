@@ -15,7 +15,6 @@ void suma_punteros(int *cuantos,int *num,int *resultado){
 }
 
 void resta_punteros(int *cuantos,int *num,int *resultado){ 
-
 	int i;
 
 	for (i=0; i<*cuantos;i++){	
@@ -23,6 +22,21 @@ void resta_punteros(int *cuantos,int *num,int *resultado){
         scanf(" %d", &*num);
         *resultado = *resultado - *num;
     }
+}
+
+void multiplicacion_punteros(int *cuantos,int *num, int*resultado){
+	int i;
+	*resultado=0;
+	for (i=0; i<*cuantos;i++){
+		printf("\nTeclea el número: ");
+		scanf(" %d", &*num);
+		*resultado = *resultado * *num;
+	}
+}
+
+void divi_punteros(int *a, int *b,int*resultado){
+	*resultado=(*a) / (*b);
+	*b=*resultado;
 }
 
 
@@ -36,7 +50,7 @@ int main(int argc, char const *argv[])
 	int valido = 1;
 	int *resultado;
 	
-
+	
 	n1=malloc(sizeof(int)*100);
 	n2=malloc(sizeof(int)*100);
 	cantidad=malloc(sizeof(int)*100);
@@ -73,8 +87,23 @@ int main(int argc, char const *argv[])
         	
         	break;
     	case 'M':
+    		printf("Multiplicación del conjunto de números que elijas\n");
+			printf("Cuántos quieres? ");
+			scanf(" %d", &*cantidad);
+			multiplicacion_punteros(cantidad,n1,resultado);
+			printf("La multiplicación es: ");
+			printf("%d",*resultado);
         	break;
     	case 'D':
+
+    		printf("Ha escogido division de numeros\n");
+  			printf("Ingrese los numeros a dividir: ");
+			scanf("%f", &*n1);
+  			printf("Ingrese el siguiente numero: ");
+  			scanf("%f", &*n2);
+  			divi_punteros(n1,n2,resultado);
+  			printf("La division de los numeros ingresados es: ");
+  			printf("%.2f",*resultado);
         
         	break;
     	case 'P':
@@ -89,8 +118,10 @@ int main(int argc, char const *argv[])
 
 	
 
-    
+    free(n2);
     free(n1);
+    free(cantidad);
+    free(resultado);
 	return 0;
 
 	
