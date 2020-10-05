@@ -39,6 +39,26 @@ void divi_punteros(float *a, float *b,float*resultado){
 	*b=*resultado;
 }
 
+void Potencia_punteros(int *cuantos,int *num, int*resultado){
+	int i;
+	*resultado=0;
+	for (i=0; i<*cuantos;i++){
+		*resultado =  *resultado + *num * *num;
+	}
+}
+
+void prom_punteros(float *cuantos,float *num,float *resultado){ 
+  float i;
+	*resultado=0;
+    for (i=0; i<*cuantos;i++)
+    {	
+        printf("\nTeclea el número: ");
+        scanf(" %f", &*num);
+        *resultado = *resultado + *num;
+    }
+}
+
+
 
 int main(int argc, char const *argv[])
 {
@@ -66,7 +86,7 @@ int main(int argc, char const *argv[])
 
 	printf("Bienvenido a la calculadora\n");
 	printf("Ingrese operacion:\n ");
-	printf("S para sumar.\n R para restar.\n M para multiplicar.\n D para dividir.\n P para potencia.\n PR para promedio\n ");
+	printf("S para sumar.\n R para restar.\n M para multiplicar.\n D para dividir.\n P para potencia.\n X para promedio\n ");
 	scanf("%c", &op);
 
 	switch (op) {
@@ -114,7 +134,27 @@ int main(int argc, char const *argv[])
   			printf("%.2f",*resultado2);
         
         	break;
-    	case 'P':
+    	case 'P':	
+
+    		printf("Ha escojido la potencia de un numero\n");
+    		printf("Ingrese numero : ");
+    		scanf(" %d", &*n1);
+    		printf("Elevado a : ");
+    		scanf(" %d", &*n2);
+    		Potencia_punteros(cantidad,n1,resultado);
+    		printf("El resultado es : ");
+    		printf("%d",*resultado);
+        	break;
+        
+        	break;
+        case 'X':
+
+        	printf("Promedio del conjunto de números que elijas\n");
+         	printf("Cuántos quieres? ");
+          	scanf(" %f", &*decimal1);
+          	prom_punteros(decimal1,decimal2,resultado2);
+          	printf("El promedio es: ");
+          printf("%.2f", *resultado2 / *decimal1);
         
         	break;
     	default:
@@ -123,9 +163,9 @@ int main(int argc, char const *argv[])
 
 	
 
-
-	
-
+	free(resultado2);
+	free(decimal2);
+	free(decimal1);
     free(n2);
     free(n1);
     free(cantidad);
