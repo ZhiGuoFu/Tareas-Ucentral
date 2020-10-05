@@ -26,7 +26,7 @@ void resta_punteros(int *cuantos,int *num,int *resultado){
 
 void multiplicacion_punteros(int *cuantos,int *num, int*resultado){
 	int i;
-	*resultado=0;
+	*resultado=1;
 	for (i=0; i<*cuantos;i++){
 		printf("\nTeclea el número: ");
 		scanf(" %d", &*num);
@@ -34,7 +34,7 @@ void multiplicacion_punteros(int *cuantos,int *num, int*resultado){
 	}
 }
 
-void divi_punteros(int *a, int *b,int*resultado){
+void divi_punteros(float *a, float *b,float*resultado){
 	*resultado=(*a) / (*b);
 	*b=*resultado;
 }
@@ -49,12 +49,20 @@ int main(int argc, char const *argv[])
 	int *numeros;
 	int valido = 1;
 	int *resultado;
+	float *decimal1;
+	float *decimal2;
+	float *resultado2;
 	
 	
 	n1=malloc(sizeof(int)*100);
 	n2=malloc(sizeof(int)*100);
 	cantidad=malloc(sizeof(int)*100);
 	resultado=malloc(sizeof(int)*100);
+	division1=malloc(sizeof(int)*100);
+	division2=malloc(sizeof(int)*100);
+	resultado2=malloc(sizeof(int)*100);
+
+
 
 	printf("Bienvenido a la calculadora\n");
 	printf("Ingrese operacion:\n ");
@@ -98,12 +106,12 @@ int main(int argc, char const *argv[])
 
     		printf("Ha escogido division de numeros\n");
   			printf("Ingrese los numeros a dividir: ");
-			scanf("%f", &*n1);
+			scanf("%f", &*decimal1);
   			printf("Ingrese el siguiente numero: ");
-  			scanf("%f", &*n2);
-  			divi_punteros(n1,n2,resultado);
+  			scanf("%f", &*decimal2);
+  			divi_punteros(decimal1,decimal2,resultado2);
   			printf("La division de los numeros ingresados es: ");
-  			printf("%.2f",*resultado);
+  			printf("%.2f",*resultado2);
         
         	break;
     	case 'P':
