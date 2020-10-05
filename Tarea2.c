@@ -132,7 +132,7 @@ int main(int argc, char const *argv[])
         	break;
 
     	case 'P':	
-    		printf("Ha escojido la potencia de un numero\n");
+    		printf("Ha escogido la potencia de un numero\n");
     		printf("Ingrese numero : ");
     		scanf(" %d", &*n1);
     		printf("Elevado a : ");
