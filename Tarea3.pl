@@ -26,6 +26,7 @@ miente(luis,viernes).
 miente(luis,sabado).
 miente(luis,domingo).
 
+%No funciono
 %frase1(X,D).
 %frase2(H,D):-.
 %frase3(X,D).
