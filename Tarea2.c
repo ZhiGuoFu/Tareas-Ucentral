@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
 void suma_punteros(int *cuantos,int *num,int *resultado){ 
 	int i;
 	*resultado=0;
