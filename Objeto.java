@@ -1,4 +1,5 @@
 class Objeto{
+	//
 	//variable de la clase
 	public static Double variableEstatica;
 
