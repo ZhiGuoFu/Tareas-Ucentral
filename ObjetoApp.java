@@ -1,4 +1,5 @@
 class ObjetoApp{
+	//
 	public static void main(String[]args){
 		Objeto.variableEstatica=Math.PI;
 
