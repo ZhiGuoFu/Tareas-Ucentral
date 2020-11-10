@@ -13,7 +13,6 @@ void sumador_puntero(int *a, int b){
 	*a=*a+b;
 }
 
-
 int main(int argc, char const *argv[])
 {
 	int *var_puntero;
